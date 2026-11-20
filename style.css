@@ -1,0 +1,35 @@
+:root{--bg:#0f1419;--card:#1a212b;--fg:#e6edf3;--mut:#8b98a5;--ok:#3fb950;--warn:#d29922;--bad:#f85149;--acc:#58a6ff;--line:#2d3744}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,sans-serif}
+header,main,footer{max-width:1100px;margin:0 auto;padding:12px 16px}
+h1{font-size:1.4rem;margin:.3em 0}
+h2{font-size:1.1rem;margin:0}
+.aviso{background:#2b2410;border:1px solid var(--warn);border-radius:8px;padding:10px 14px;font-size:.92rem}
+.ctx{color:var(--mut);font-size:.85rem;margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,background .2s}
+.card.changed{border-color:var(--bad);background:#2a1a1c}
+.card header{padding:0;display:flex;align-items:center;gap:8px;max-width:none}
+.card .ico{font-size:1.4rem}
+.card .name{font-weight:600;flex:1}
+.badge{font-size:.72rem;padding:2px 8px;border-radius:99px;background:var(--line);color:var(--mut)}
+.badge.ativo{background:#12361d;color:var(--ok)}
+.badge.pedindo{background:#3a2e0b;color:var(--warn)}
+.badge.indisponivel{background:#3a1517;color:var(--bad)}
+.reading{font:600 1.05rem ui-monospace,monospace;min-height:3.2em;white-space:pre-line}
+.note{color:var(--mut);font-size:.8rem}
+canvas,video{width:100%;max-height:110px;background:#000;border-radius:6px}
+video{max-height:140px;object-fit:cover}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button{background:var(--acc);color:#04111f;border:0;border-radius:6px;padding:7px 12px;font-weight:600;cursor:pointer}
+button.stop{background:var(--line);color:var(--fg)}
+button:disabled{opacity:.4;cursor:not-allowed}
+input[type=number]{width:5.5em;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:4px;padding:3px 6px}
+label{font-size:.82rem;color:var(--mut)}
+.log{margin-top:16px}
+.log-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+#log{list-style:none;margin:0;padding:0;max-height:320px;overflow:auto;background:var(--card);border-radius:8px}
+#log li{padding:6px 12px;border-bottom:1px solid var(--line);font:.85rem ui-monospace,monospace}
+#log li.empty{color:var(--mut)}
+#log time{color:var(--acc);margin-right:8px}
+footer{color:var(--mut);font-size:.85rem}

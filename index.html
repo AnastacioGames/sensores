@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel de Sensores</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Painel de Sensores do Navegador</h1>
+  <div class="aviso" role="note">
+    <strong>Aviso:</strong> este painel mostra leituras <strong>reais</strong> de sensores físicos do seu
+    dispositivo (ruído de áudio, luz da câmera, campo magnético quando suportado, movimento, GPS).
+    Variações nesses sensores têm explicação física comum: ruído ambiente, luz variando, trepidação,
+    deriva do GPS, interferência elétrica etc. <strong>Nenhuma dessas leituras é evidência de fenômeno
+    paranormal</strong> — é só o sensor fazendo o que ele faz. Tudo roda no seu navegador; nenhum dado
+    é enviado para fora.
+  </div>
+  <div class="ctx" id="ctx"></div>
+</header>
+
+<main>
+  <section id="cards" class="cards"></section>
+
+  <section class="log">
+    <div class="log-head">
+      <h2>Log de alterações detectadas</h2>
+      <button id="clear-log" type="button">Limpar</button>
+    </div>
+    <ul id="log"><li class="empty">Nenhuma alteração detectada ainda.</li></ul>
+  </section>
+</main>
+
+<footer>
+  Detector: compara a leitura atual com a média móvel das últimas
+  <label>N = <input id="win" type="number" min="3" max="200" value="20"></label> leituras.
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
